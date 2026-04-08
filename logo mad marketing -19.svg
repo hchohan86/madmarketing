@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="BACKOVER" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110.35 101.74">
+  <!-- Generator: Adobe Illustrator 29.7.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 8)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: url(#linear-gradient2);
+      }
+
+      .st1 {
+        font-family: Aventa-Regular, Aventa-Regular;
+        font-size: 4.65px;
+      }
+
+      .st1, .st2 {
+        fill: #fff;
+      }
+
+      .st3 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st4 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="31.41" y1="57.95" x2="75.03" y2="39.51" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2f1c51"/>
+      <stop offset="1" stop-color="#483687"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="33.34" y1="62.51" x2="76.96" y2="44.07" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient2" x1="32.75" y1="61.13" x2="76.37" y2="42.69" xlink:href="#linear-gradient"/>
+  </defs>
+  <text class="st1" transform="translate(31.36 68.61)"><tspan x="0" y="0">MARKETING</tspan></text>
+  <polygon class="st2" points="32.03 31.95 37.1 44.75 32.92 54.79 29.18 44.66 29.18 61.11 21.18 61.11 21.18 31.95 32.03 31.95"/>
+  <polygon class="st4" points="46.78 41.99 51.94 55.77 48.29 55.77 46.34 61.11 38.25 61.11 46.78 41.99"/>
+  <polygon class="st2" points="50.69 31.95 58.34 31.95 69.54 61.11 61.81 61.11 50.69 31.95"/>
+  <g>
+    <path class="st3" d="M89.16,46.5c.02,7.74-6.01,14.07-13.63,14.53l-.77-2.25-1.68-4.93c-.84-1.89.11-3.39,1.42-4.47,1.73-1.42,3.98-2.02,6.19-1.71.36.05.65.09.76.11,1.08.18,2,.49,2.1,1.88,1.09-1.51.99-3,.33-4.52-.41-.94-1.13-1.6-2.04-1.99-.8-.33-1.35-.88-1.79-1.57-.62-.98-1.61-1.41-2.66-1.6-.57-.1-1.14-.19-1.72-.28-1.17-.17-2.34-.3-3.51-.41-.31-.03-.61-.05-.92-.07h-3.97l-.08-.21-1.46-3.95-.03-.09-1.09-2.96h9.93c8.01,0,14.58,6.46,14.6,14.47Z"/>
+    <path class="st0" d="M74.56,41.35c.56.09,1.13.13,1.68.27,1.04.26,2.07.58,3.11.87.32.09.33.27.21.54-.28.59-.94.94-1.56.82-.62-.12-1.11-.7-1.16-1.39,0-.12,0-.25,0-.4-.77-.22-1.52-.44-2.27-.66v-.06Z"/>
+  </g>
+</svg>
