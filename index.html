@@ -24,15 +24,16 @@ body{background:var(--ink);color:var(--ow);font-family:'Poppins',sans-serif;font
 a{text-decoration:none;color:inherit}
 img{max-width:100%;height:auto}
 
-/* ━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+/* ━━━ NAV (UPDATED: Increased height and logo size) ━━━━━━━━━ */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:400;height:70px;
+  position:fixed;top:0;left:0;right:0;z-index:400;
+  height:95px; /* Increased from 70px */
   padding:0 48px;display:flex;align-items:center;justify-content:space-between;
   transition:background .5s,backdrop-filter .5s,box-shadow .5s;
 }
-nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(55,188,188,.14)}
-.nav-logo{display:flex;align-items:center;cursor:pointer;height:44px}
-.nav-logo img{height:40px;width:auto;mix-blend-mode:screen;filter:brightness(1.1)}
+nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(55,188,188,.14); height: 75px;}
+.nav-logo{display:flex;align-items:center;cursor:pointer;height:60px}
+.nav-logo img{height:55px;width:auto;mix-blend-mode:screen;filter:brightness(1.1)} /* Increased from 40px */
 .nlinks{display:flex;gap:2.4rem;list-style:none}
 .nlinks a{font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;position:relative;padding-bottom:3px;transition:color .2s}
 .nlinks a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transition:transform .28s;transform-origin:left}
@@ -86,17 +87,22 @@ nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1p
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(55,188,188,.1);border:1px solid rgba(55,188,188,.25);border-radius:20px;font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:28px}
 .hero-pulse{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.4rem,6.5vw,8rem);font-weight:400;line-height:.92;letter-spacing:.015em;color:#fff;margin-bottom:36px}
+
+/* UPDATED: Hero text reduced by 30% */
+.hero-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,3.15vw,3.9rem);font-weight:400;line-height:.92;letter-spacing:.015em;color:#fff;margin-bottom:36px}
 .hero-h .line-anim{color:var(--teal);display:inline-block;overflow:hidden;vertical-align:bottom}
-.hero-h .cycler{display:flex;flex-direction:column;height:1em;overflow:hidden;line-height:1}
-.hero-h .cycler-inner{animation:cycle 9s infinite;will-change:transform}
+.hero-h .cycler{display:inline-block;height:1em;overflow:hidden;line-height:1;vertical-align:bottom;}
+.hero-h .cycler-inner{animation:cycle 14s infinite;will-change:transform}
+
+/* UPDATED: Slow cycle animation (3s static, 0.5s move) */
 @keyframes cycle{
-  0%,18%{transform:translateY(0)}
-  22%,38%{transform:translateY(-100%)}
-  42%,58%{transform:translateY(-200%)}
-  62%,78%{transform:translateY(-300%)}
-  82%,100%{transform:translateY(0)}
+  0%, 21.4% { transform: translateY(0); }
+  25%, 46.4% { transform: translateY(-100%); }
+  50%, 71.4% { transform: translateY(-200%); }
+  75%, 96.4% { transform: translateY(-300%); }
+  100% { transform: translateY(0); }
 }
+
 .hero-bot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:28px}
 .hero-desc{font-size:.9rem;font-weight:300;color:rgba(237,232,245,.5);max-width:440px;line-height:1.82}
 .hero-acts{display:flex;gap:12px;flex-shrink:0}
@@ -373,7 +379,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   .stats-grid,.spg,.cg,.bg2,.fg3{grid-template-columns:1fr}
   .bc-feat{grid-column:span 1;grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
-  .hero-h{font-size:clamp(3rem,11vw,6rem)}
+  .hero-h{font-size:clamp(1.5rem,7.7vw,3.2rem)}
 }
 </style>
 </head>
@@ -382,7 +388,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
 <!-- ━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
 <nav id="nav">
   <div class="nav-logo" onclick="go('home')">
-    <img src="logo.png" alt="MAD Marketing" height="40">
+    <img src="logo.png" alt="MAD Marketing">
   </div>
   <ul class="nlinks">
     <li><a id="nl-home" onclick="go('home')" class="on">Home</a></li>
@@ -699,13 +705,13 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
       </div>
       <div><div class="fhd">Services</div><ul class="flinks"><li><a onclick="go('services')">Content Marketing</a></li><li><a onclick="go('services')">GTM Strategy</a></li><li><a onclick="go('services')">MVP to Scale</a></li><li><a onclick="go('services')">Performance Marketing</a></li><li><a onclick="go('services')">Fractional CMO</a></li></ul></div>
       <div><div class="fhd">Company</div><ul class="flinks"><li><a onclick="go('about')">About</a></li><li><a onclick="go('work')">Case Studies</a></li><li><a onclick="go('blog')">Insights</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
-      <div><div class="fhd">Contact</div><ul class="flinks"><li><a>madmarketingsol.com</a></li><li><a><span class="__cf_email__" data-cfemail="f69e939a9a99b69b97929b97849d93829f989185999ad895999b">[email&#160;protected]</span></a></li><li><a>+92 123 45678</a></li></ul></div>
+      <div><div class="fhd">Contact</div><ul class="flinks"><li><a>madmarketingsol.com</a></li><li><a>hello@madmarketingsol.com</a></li><li><a>+92 123 45678</a></li></ul></div>
     </div>
     <div class="fbot"><span>&copy; 2025 MAD Marketing Solutions. All rights reserved.</span><div class="fsoc"><a>LinkedIn</a><a>Upwork</a><a>Instagram</a></div></div>
   </footer>
 </div>
 
-<!-- ━━━ SERVICES ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━ SERVICES ━━━ -->
 <div id="services" class="page" style="background:var(--p1)">
   <div class="ph"><div class="ph-in"><div class="eyebrow rv" style="margin-bottom:14px">Services</div><h2 class="bb rv d1" style="font-size:clamp(3rem,6vw,7rem);color:#fff">BUILT AROUND<br>ONE QUESTION:<br><span class="tc">WHAT MOVES REVENUE?</span></h2><p class="lead rv d2">No vanity metrics. Every service connects directly to commercial outcomes.</p></div></div>
   <div class="spg">
@@ -718,7 +724,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <footer style="background:#040210"><div class="fbot" style="max-width:1280px;margin:0 auto"><span>&copy; 2025 MAD Marketing Solutions</span><a class="btn bt" onclick="go('contact')" style="font-size:.64rem;padding:9px 20px">Start a Conversation &rarr;</a></div></footer>
 </div>
 
-<!-- ━━━ WORK ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━ WORK ━━━ -->
 <div id="work" class="page" style="background:var(--p1)">
   <div class="ph"><div class="ph-in"><div class="eyebrow rv" style="margin-bottom:14px">Case Studies</div><h2 class="bb rv d1" style="font-size:clamp(3rem,6vw,7rem);color:#fff">RESULTS THAT SPEAK<br><span class="tc">FOR THEMSELVES.</span></h2><p class="lead rv d2">Engagements across AI, e-commerce, manufacturing, and B2B.</p></div></div>
   <div class="cg">
@@ -733,7 +739,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <footer style="background:#040210"><div class="fbot" style="max-width:1280px;margin:0 auto"><span>&copy; 2025 MAD Marketing Solutions</span><div class="fsoc"><a>LinkedIn</a><a>Upwork</a><a>Instagram</a></div></div></footer>
 </div>
 
-<!-- ━━━ ABOUT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━ ABOUT ━━━ -->
 <div id="about" class="page" style="background:var(--p1)">
   <div class="ph"><div class="ph-in"><div class="eyebrow rv" style="margin-bottom:14px">About</div><h2 class="bb rv d1" style="font-size:clamp(3rem,6vw,7rem);color:#fff">CORPORATE-LEVEL STRATEGY.<br><span class="tc">EXECUTION THAT SHIPS.</span></h2></div></div>
   <div class="ag">
@@ -767,7 +773,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <footer style="background:#040210"><div class="fbot" style="max-width:1280px;margin:0 auto"><span>&copy; 2025 MAD Marketing Solutions</span><a class="btn bgh" onclick="go('contact')" style="font-size:.64rem;padding:9px 20px">Work With Us</a></div></footer>
 </div>
 
-<!-- ━━━ BLOG ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━ BLOG ━━━ -->
 <div id="blog" class="page" style="background:var(--p1)">
   <div class="ph"><div class="ph-in"><div class="eyebrow rv" style="margin-bottom:14px">Insights</div><h2 class="bb rv d1" style="font-size:clamp(3rem,6vw,7rem);color:#fff">THINKING OUT LOUD<br>ABOUT <span class="tc">GROWTH &amp; STRATEGY.</span></h2><p class="lead rv d2">Essays, frameworks, and observations from the front lines.</p></div></div>
   <div class="bg2">
@@ -780,13 +786,13 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <footer style="background:#040210"><div class="fbot" style="max-width:1280px;margin:0 auto"><span>&copy; 2025 MAD Marketing Solutions</span><div class="fsoc"><a>LinkedIn</a><a>Upwork</a></div></div></footer>
 </div>
 
-<!-- ━━━ CONTACT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+<!-- ━━━ CONTACT ━━━ -->
 <div id="contact" class="page" style="background:var(--p1)">
   <div class="ph"><div class="ph-in"><div class="eyebrow rv" style="margin-bottom:14px">Contact</div><h2 class="bb rv d1" style="font-size:clamp(3rem,6vw,7rem);color:#fff">LET'S BUILD SOMETHING<br><span class="tc">WORTH TALKING ABOUT.</span></h2><p class="lead rv d2">The first conversation is always free.</p></div></div>
   <div class="cl">
     <div class="rv">
       <div class="ci"><div class="ci-ico">&#127760;</div><div><div class="ci-lbl">Website</div><div class="ci-val">madmarketingsol.com</div></div></div>
-      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f8f5fcfcffd0fdf1f4fdf1e2fbf5e4f9fef7e3fffcbef3fffd">[email&#160;protected]</a></div></div></div>
+      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val">hello@madmarketingsol.com</div></div></div>
       <div class="ci"><div class="ci-ico">&#128222;</div><div><div class="ci-lbl">Phone</div><div class="ci-val">+92 123 45678</div></div></div>
       <div class="ci"><div class="ci-ico">&#128188;</div><div><div class="ci-lbl">Upwork</div><div class="ci-val">Top Rated &middot; Top 10%</div></div></div>
       <div class="ci"><div class="ci-ico">&#128205;</div><div><div class="ci-lbl">Availability</div><div class="ci-val">Open globally for new engagements</div></div></div>
@@ -807,7 +813,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   </footer>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 /* ROUTING */
 function go(id){
   document.querySelectorAll('.page').forEach(p=>p.style.display='none');
@@ -860,4 +866,18 @@ if(ws){
   let down=false,sx,sl;
   ws.addEventListener('mousedown',e=>{down=true;ws.classList.add('drag');sx=e.pageX-ws.offsetLeft;sl=ws.scrollLeft});
   document.addEventListener('mouseup',()=>{down=false;ws.classList.remove('drag')});
-  ws.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();ws.scrollLeft=sl-(e.page
+  ws.addEventListener('mousemove',e=>{if(!down)return;e.preventDefault();ws.scrollLeft=sl-(e.pageX-ws.offsetLeft-sx)});
+}
+
+function submitF(e){
+  e.preventDefault();
+  document.getElementById('fok').style.display = 'block';
+  e.target.reset();
+}
+
+/* Initial reveal */
+initReveals();
+go('home');
+</script>
+</body>
+</html>
