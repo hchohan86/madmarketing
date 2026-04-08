@@ -26,13 +26,13 @@ img{max-width:100%;height:auto}
 
 /* ━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:400;height:78px;
+  position:fixed;top:0;left:0;right:0;z-index:400;height:88px;
   padding:0 48px;display:flex;align-items:center;justify-content:space-between;
   transition:background .5s,backdrop-filter .5s,box-shadow .5s;
 }
 nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(55,188,188,.14)}
-.nav-logo{display:flex;align-items:center;cursor:pointer;height:60px}
-.nav-logo img{height:56px;width:auto}
+.nav-logo{display:flex;align-items:center;cursor:pointer;height:74px}
+.nav-logo img{height:70px;width:auto;filter:drop-shadow(0 0 14px rgba(55,188,188,.45))}
 .nlinks{display:flex;gap:2.4rem;list-style:none}
 .nlinks a{font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;position:relative;padding-bottom:3px;transition:color .2s}
 .nlinks a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transition:transform .28s;transform-origin:left}
@@ -86,11 +86,35 @@ nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1p
 .hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(55,188,188,.1);border:1px solid rgba(55,188,188,.25);border-radius:20px;font-size:.58rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:28px}
 .hero-pulse{width:5px;height:5px;border-radius:50%;background:var(--teal);animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4.7vw,5.9rem);font-weight:400;line-height:.92;letter-spacing:.015em;color:#fff;margin-bottom:36px}
-.hero-h .cycler{display:inline-block;position:relative;vertical-align:bottom;overflow:hidden;min-width:2em}
-.cycler-word{display:block;position:absolute;top:0;left:0;opacity:0;transform:translateY(100%);transition:opacity .55s cubic-bezier(.16,1,.3,1),transform .55s cubic-bezier(.16,1,.3,1);white-space:nowrap;pointer-events:none}
-.cycler-word.visible{opacity:1;transform:translateY(0);position:relative}
-.cycler-word.exit{opacity:0;transform:translateY(-100%)}
+.hero-h{font-family:'Bebas Neue',sans-serif;font-size:clamp(3.1rem,5.9vw,7.4rem);font-weight:400;line-height:.92;letter-spacing:.015em;color:#fff;margin-bottom:36px}
+.hero-h .cycler{
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
+  height:1em;
+  min-width:4ch;
+  line-height:1;
+  vertical-align:middle;
+}
+.cycler-word{
+  display:block;
+  position:absolute;
+  top:0; left:0;
+  opacity:0;
+  transform:translateY(108%);
+  transition:opacity .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.cycler-word.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.cycler-word.exit{
+  opacity:0;
+  transform:translateY(-108%);
+  transition:opacity .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
+}
 .hero-bot{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:28px}
 .hero-desc{font-size:1.05rem;font-weight:400;color:rgba(237,232,245,.72);max-width:440px;line-height:1.82}
 .hero-acts{display:flex;gap:12px;flex-shrink:0}
@@ -378,7 +402,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   .stats-grid,.spg,.cg,.bg2,.fg3{grid-template-columns:1fr}
   .bc-feat{grid-column:span 1;grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
-  .hero-h{font-size:clamp(2.2rem,8vw,4.4rem)}
+  .hero-h{font-size:clamp(2.75rem,10vw,5.5rem)}
 }
 </style>
 </head>
@@ -413,7 +437,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
     <div class="hero-c">
       <div class="hero-badge rv"><div class="hero-pulse"></div>Available for New Engagements</div>
       <h1 class="hero-h rv d1">
-        YOUR <span class="tc"><span class="cycler" id="herocycler"><span class="cycler-word visible">FRACTIONAL</span><span class="cycler-word">EMBEDDED</span><span class="cycler-word">DEDICATED</span><span class="cycler-word">STRATEGIC</span></span></span><br>CMO &amp; GTM PARTNER.<br>BUILT FOR FOUNDERS.
+        YOUR<br><span class="tc"><span class="cycler" id="herocycler"><span class="cycler-word visible">FRACTIONAL</span><span class="cycler-word">EMBEDDED</span><span class="cycler-word">DEDICATED</span><span class="cycler-word">STRATEGIC</span></span></span><br>CMO &amp; GTM PARTNER.<br>BUILT FOR FOUNDERS.
       </h1>
       <div class="hero-bot rv d2">
         <p class="hero-desc">9 years. 300+ brands. $10M+ ad spend managed. Corporate-level marketing strategy at the speed you actually need it.</p>
@@ -716,7 +740,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
       </div>
       <div><div class="fhd">Services</div><ul class="flinks"><li><a onclick="go('services')">Content Marketing</a></li><li><a onclick="go('services')">GTM Strategy</a></li><li><a onclick="go('services')">MVP to Scale</a></li><li><a onclick="go('services')">Performance Marketing</a></li><li><a onclick="go('services')">Fractional CMO</a></li></ul></div>
       <div><div class="fhd">Company</div><ul class="flinks"><li><a onclick="go('about')">About</a></li><li><a onclick="go('work')">Case Studies</a></li><li><a onclick="go('blog')">Insights</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
-      <div><div class="fhd">Contact</div><ul class="flinks"><li><a>madmarketingsol.com</a></li><li><a><span class="__cf_email__" data-cfemail="f69e939a9a99b69b97929b97849d93829f989185999ad895999b">[email&#160;protected]</span></a></li><li><a>+92 123 45678</a></li></ul></div>
+      <div><div class="fhd">Contact</div><ul class="flinks"><li><a>madmarketingsol.com</a></li><li><a>hello@madmarketingsol.com</a></li></ul></div>
     </div>
     <div class="fbot"><span>&copy; 2025 MAD Marketing Solutions. All rights reserved.</span><div class="fsoc"><a>LinkedIn</a><a>Upwork</a><a>Instagram</a></div></div>
   </footer>
@@ -803,19 +827,36 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <div class="cl">
     <div class="rv">
       <div class="ci"><div class="ci-ico">&#127760;</div><div><div class="ci-lbl">Website</div><div class="ci-val">madmarketingsol.com</div></div></div>
-      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="90f8f5fcfcffd0fdf1f4fdf1e2fbf5e4f9fef7e3fffcbef3fffd">[email&#160;protected]</a></div></div></div>
-      <div class="ci"><div class="ci-ico">&#128222;</div><div><div class="ci-lbl">Phone</div><div class="ci-val">+92 123 45678</div></div></div>
+      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val">hello@madmarketingsol.com</div></div></div>
       <div class="ci"><div class="ci-ico">&#128188;</div><div><div class="ci-lbl">Upwork</div><div class="ci-val">Top Rated &middot; Top 10%</div></div></div>
       <div class="ci"><div class="ci-ico">&#128205;</div><div><div class="ci-lbl">Availability</div><div class="ci-val">Open globally for new engagements</div></div></div>
       <div class="fitbox"><div style="font-size:.56rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)">Good fit for</div><ul class="fitl"><li>Companies between $500K&ndash;$50M revenue</li><li>Founders building toward first or next raise</li><li>Teams without a senior marketing leader</li><li>Products nearing launch with no GTM plan</li><li>Brands with budget but no strategy</li></ul></div>
     </div>
-    <form class="form rv d1" onsubmit="submitF(event)">
-      <div class="frow"><div class="fg"><label class="fl">First Name</label><input class="fi" type="text" placeholder="Alex"></div><div class="fg"><label class="fl">Last Name</label><input class="fi" type="text" placeholder="Morgan"></div></div>
-      <div class="fg"><label class="fl">Company Email</label><input class="fi" type="email" placeholder="alex@company.com"></div>
-      <div class="fg"><label class="fl">Company / Project</label><input class="fi" type="text" placeholder="Acme Inc."></div>
-      <div class="fg"><label class="fl">What are you looking for?</label><select class="fsel"><option value="">Select a service</option><option>Fractional CMO</option><option>GTM Strategy</option><option>Content Marketing</option><option>MVP to Scale</option><option>Performance Marketing</option><option>Not sure &mdash; let's talk</option></select></div>
-      <div class="fg"><label class="fl">Tell us about your challenge</label><textarea class="fta" placeholder="Briefly describe where you are and where you're trying to go..."></textarea></div>
-      <div><button class="btn bt" type="submit">Send Message &rarr;</button><div id="fok">&#10003; Message received. We'll be in touch within 24 hours.</div></div>
+    <form class="form rv d1" id="contactForm" onsubmit="submitF(event)">
+      <div class="frow">
+        <div class="fg"><label class="fl">First Name</label><input class="fi" id="f_fname" type="text" placeholder="Alex" required></div>
+        <div class="fg"><label class="fl">Last Name</label><input class="fi" id="f_lname" type="text" placeholder="Morgan"></div>
+      </div>
+      <div class="fg"><label class="fl">Company Email</label><input class="fi" id="f_email" type="email" placeholder="alex@company.com" required></div>
+      <div class="fg"><label class="fl">Company / Project</label><input class="fi" id="f_company" type="text" placeholder="Acme Inc."></div>
+      <div class="fg">
+        <label class="fl">What are you looking for?</label>
+        <select class="fsel" id="f_service">
+          <option value="">Select a service</option>
+          <option>Fractional CMO</option>
+          <option>GTM Strategy</option>
+          <option>Content Marketing</option>
+          <option>MVP to Scale</option>
+          <option>Performance Marketing</option>
+          <option>Not sure &mdash; let's talk</option>
+        </select>
+      </div>
+      <div class="fg"><label class="fl">Tell us about your challenge</label><textarea class="fta" id="f_message" placeholder="Briefly describe where you are and where you're trying to go..." required></textarea></div>
+      <div>
+        <button class="btn bt" type="submit" id="f_btn">Send Message &rarr;</button>
+        <div id="fok" style="display:none;color:var(--teal);font-size:.82rem;margin-top:6px">&#10003; Message sent! We'll be in touch within 24 hours.</div>
+        <div id="ferr" style="display:none;color:var(--ora);font-size:.78rem;margin-top:6px">Something went wrong. Please email us directly at hello@madmarketingsol.com</div>
+      </div>
     </form>
   </div>
   <footer style="background:#040210">
@@ -824,7 +865,12 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   </footer>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* EmailJS init — uses the free public service */
+(function(){
+  try{emailjs.init({publicKey:'YOUR_EMAILJS_PUBLIC_KEY'})}catch(e){}
+})();
 /* ROUTING */
 function go(id){
   document.querySelectorAll('.page').forEach(p=>p.style.display='none');
@@ -979,65 +1025,106 @@ document.querySelectorAll('[data-count]').forEach(el=>cObs.observe(el));
   raf=requestAnimationFrame(step);
 })();
 
-/* WORD CYCLER - pauses ~3s per word */
+/* WORD CYCLER */
 (function(){
-  const cycler=document.getElementById('herocycler');
-  if(!cycler)return;
-  const words=Array.from(cycler.querySelectorAll('.cycler-word'));
-  if(!words.length)return;
-  let idx=0;
+  const cycler = document.getElementById('herocycler');
+  if(!cycler) return;
+  const words = Array.from(cycler.querySelectorAll('.cycler-word'));
+  if(!words.length) return;
+  let idx = 0;
 
-  function lockWidth(){
-    let maxW=0;
-    words.forEach(w=>{
-      w.style.cssText='display:block;position:static;opacity:1;transform:none;transition:none';
-      maxW=Math.max(maxW,w.offsetWidth);
+  function setWidth(){
+    // Measure each word by briefly making it visible at full opacity
+    let maxW = 0;
+    words.forEach(w => {
+      w.style.transition = 'none';
+      w.style.opacity = '1';
+      w.style.transform = 'translateY(0)';
+      maxW = Math.max(maxW, w.offsetWidth);
+      w.style.opacity = '';
+      w.style.transform = '';
+      w.style.transition = '';
     });
-    cycler.style.minWidth=maxW+'px';
-    cycler.style.display='inline-block';
-    words.forEach((w,i)=>{
-      if(i===0){
-        w.style.cssText='display:block;position:relative;opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .5s ease';
-      } else {
-        w.style.cssText='display:block;position:absolute;top:0;left:0;opacity:0;transform:translateY(110%);transition:opacity .5s ease,transform .5s ease';
-      }
-    });
+    cycler.style.minWidth = (maxW + 2) + 'px';
   }
 
-  (document.fonts ? document.fonts.ready : Promise.resolve()).then(()=>{
-    lockWidth();
-    setInterval(advance, 3200);
-  });
+  // Show first word immediately
+  words[0].classList.add('visible');
 
-  function advance(){
-    const prev=words[idx];
-    idx=(idx+1)%words.length;
-    const next=words[idx];
-    prev.style.opacity='0';
-    prev.style.transform='translateY(-110%)';
-    prev.style.position='absolute';
-    next.style.transition='none';
-    next.style.opacity='0';
-    next.style.transform='translateY(110%)';
-    next.style.position='relative';
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      next.style.transition='opacity .5s ease,transform .5s ease';
-      next.style.opacity='1';
-      next.style.transform='translateY(0)';
-    }));
-    setTimeout(()=>{
-      prev.style.transition='none';
-      prev.style.transform='translateY(110%)';
-    }, 520);
+  // Set width — run now, and again after fonts load for accuracy
+  setWidth();
+  if(document.fonts && document.fonts.ready){
+    document.fonts.ready.then(setWidth);
   }
+
+  setInterval(function(){
+    const prev = words[idx];
+    idx = (idx + 1) % words.length;
+    const next = words[idx];
+
+    // Exit current
+    prev.classList.remove('visible');
+    prev.classList.add('exit');
+
+    // Enter next after a tiny delay so both transitions don't fight
+    setTimeout(function(){
+      next.classList.remove('exit');
+      next.classList.add('visible');
+    }, 50);
+
+    // Clean exit class
+    setTimeout(function(){
+      prev.classList.remove('exit');
+    }, 500);
+
+  }, 3400);
 })();
 
-/* FORM */
+/* FORM — sends to hchohan86@gmail.com via FormSubmit (no setup needed) */
 function submitF(e){
   e.preventDefault();
-  const btn=e.target.querySelector('button');
-  btn.textContent='Sending...';btn.disabled=true;
-  setTimeout(()=>{btn.style.display='none';document.getElementById('fok').style.display='block'},1200);
+  const btn=document.getElementById('f_btn');
+  const ok=document.getElementById('fok');
+  const err=document.getElementById('ferr');
+  const fname=document.getElementById('f_fname').value.trim();
+  const lname=document.getElementById('f_lname').value.trim();
+  const email=document.getElementById('f_email').value.trim();
+  const company=document.getElementById('f_company').value.trim();
+  const service=document.getElementById('f_service').value;
+  const message=document.getElementById('f_message').value.trim();
+
+  btn.textContent='Sending...'; btn.disabled=true;
+  err.style.display='none';
+
+  // Use FormSubmit.co — no backend, no setup. Sends direct to inbox.
+  const fd=new FormData();
+  fd.append('_subject','New enquiry from MAD Marketing website');
+  fd.append('_captcha','false');
+  fd.append('_template','table');
+  fd.append('name',fname+' '+lname);
+  fd.append('email',email);
+  fd.append('company',company||'Not provided');
+  fd.append('service',service||'Not specified');
+  fd.append('message',message);
+
+  fetch('https://formsubmit.co/ajax/hchohan86@gmail.com',{
+    method:'POST',
+    body:fd,
+    headers:{Accept:'application/json'}
+  })
+  .then(r=>r.json())
+  .then(res=>{
+    if(res.success==='true'||res.success===true){
+      btn.style.display='none';
+      ok.style.display='block';
+    } else {
+      throw new Error('Form error');
+    }
+  })
+  .catch(()=>{
+    btn.textContent='Send Message →'; btn.disabled=false;
+    err.style.display='block';
+  });
 }
 
 /* INIT */
