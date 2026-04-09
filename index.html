@@ -1148,3 +1148,21 @@ function submitF(e){
   .then(res => {
     if(res.success){
       btn
+      btn.style.display = 'none';
+      ok.style.display  = 'block';
+      document.getElementById('contactForm').reset();
+    } else {
+      throw new Error(res.message || 'Submit failed');
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Send Message →'; btn.disabled = false;
+    err.style.display = 'block';
+  });
+}
+
+/* INIT */
+go('home');
+</script>
+</body>
+</html>
