@@ -26,13 +26,13 @@ img{max-width:100%;height:auto}
 
 /* ━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:400;height:88px;
+  position:fixed;top:0;left:0;right:0;z-index:400;height:130px;
   padding:0 48px;display:flex;align-items:center;justify-content:space-between;
   transition:background .5s,backdrop-filter .5s,box-shadow .5s;
 }
 nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(55,188,188,.14)}
-.nav-logo{display:flex;align-items:center;cursor:pointer;height:74px}
-.nav-logo img{height:70px;width:auto;filter:drop-shadow(0 0 14px rgba(55,188,188,.45))}
+.nav-logo{display:flex;align-items:center;cursor:pointer;height:120px}
+.nav-logo img{height:114px;width:auto;filter:drop-shadow(0 0 18px rgba(55,188,188,.5))}
 .nlinks{display:flex;gap:2.4rem;list-style:none}
 .nlinks a{font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;position:relative;padding-bottom:3px;transition:color .2s}
 .nlinks a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transition:transform .28s;transform-origin:left}
@@ -310,7 +310,7 @@ nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1p
 
 /* Work page */
 .cg{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;padding:0 48px 80px;max-width:1320px;margin:0 auto}
-.cc{background:var(--p2);border:1px solid var(--bdr2);border-radius:4px;padding:36px;position:relative;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s,border-color .3s}
+.cc{background:var(--p2);border:1px solid var(--bdr2);border-radius:4px;padding:36px;position:relative;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s,border-color .3s;word-break:break-word}
 .cc:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,.4);border-color:var(--bdr)}
 .cc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),var(--ora));transform:scaleX(0);transition:transform .35s;transform-origin:left}
 .cc:hover::after{transform:scaleX(1)}
@@ -320,7 +320,7 @@ nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1p
 .mets{display:flex;gap:18px;flex-wrap:wrap;padding-top:16px;border-top:1px solid var(--bdr2)}
 .mv{font-family:'Bebas Neue',sans-serif;font-size:2.1rem;letter-spacing:.04em;color:var(--ora);line-height:1}
 .ml{font-size:.56rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:2px}
-.cc-feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cc-feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .cc-feat .cc-title{font-size:2.4rem}
 .ctab{margin:0 48px 80px;max-width:1230px;margin-left:auto;margin-right:auto;background:linear-gradient(135deg,var(--p2),var(--p3));border:1px solid var(--bdr);border-radius:4px;padding:60px;text-align:center;position:relative;overflow:hidden}
 .ctab::before{content:'';position:absolute;top:-50%;left:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(55,188,188,.1) 0%,transparent 60%);pointer-events:none}
@@ -394,15 +394,22 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   .fg3{grid-template-columns:1fr 1fr}
   .nlinks{display:none}
   .sc-full,.bc-feat{grid-column:span 1}
-  nav{padding:0 24px}
+  nav{padding:0 16px;height:100px}
+  .nav-logo{height:88px}
+  .nav-logo img{height:84px}
   .hero,.s-stmt,.s-stats,.s-svc,.s-proc,.s-about,.s-cta,.s-proof,.s-qual,.s-work,.s-ind,.ph,.spg,.cg,.bg2,.ag,.cl,.ctab,.tl{padding-left:24px;padding-right:24px}
   .spg,.cg,.bg2,.ag{padding-left:24px;padding-right:24px}
 }
 @media(max-width:640px){
   .stats-grid,.spg,.cg,.bg2,.fg3{grid-template-columns:1fr}
+  .cg{gap:14px}
+  .cc-feat{grid-template-columns:1fr;gap:20px}
   .bc-feat{grid-column:span 1;grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .hero-h{font-size:clamp(2.75rem,10vw,5.5rem)}
+  nav{height:90px;padding:0 16px}
+  .nav-logo{height:78px}
+  .nav-logo img{height:74px}
 }
 </style>
 </head>
@@ -740,7 +747,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
       </div>
       <div><div class="fhd">Services</div><ul class="flinks"><li><a onclick="go('services')">Content Marketing</a></li><li><a onclick="go('services')">GTM Strategy</a></li><li><a onclick="go('services')">MVP to Scale</a></li><li><a onclick="go('services')">Performance Marketing</a></li><li><a onclick="go('services')">Fractional CMO</a></li></ul></div>
       <div><div class="fhd">Company</div><ul class="flinks"><li><a onclick="go('about')">About</a></li><li><a onclick="go('work')">Case Studies</a></li><li><a onclick="go('blog')">Insights</a></li><li><a onclick="go('contact')">Contact</a></li></ul></div>
-      <div><div class="fhd">Contact</div><ul class="flinks"><li><a>madmarketingsol.com</a></li><li><a>hello@madmarketingsol.com</a></li></ul></div>
+      <div><div class="fhd">Contact</div><ul class="flinks"><li><a>madmarketingsol.com</a></li><li><a><span class="__cf_email__" data-cfemail="b8d0ddd4d4d7f8d5d9dcd5d9cad3ddccd1d6dfcbd7d496dbd7d5">[email&#160;protected]</span></a></li></ul></div>
     </div>
     <div class="fbot"><span>&copy; 2025 MAD Marketing Solutions. All rights reserved.</span><div class="fsoc"><a>LinkedIn</a><a>Upwork</a><a>Instagram</a></div></div>
   </footer>
@@ -827,7 +834,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <div class="cl">
     <div class="rv">
       <div class="ci"><div class="ci-ico">&#127760;</div><div><div class="ci-lbl">Website</div><div class="ci-val">madmarketingsol.com</div></div></div>
-      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val">hello@madmarketingsol.com</div></div></div>
+      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9ef6fbf2f2f1def3fffaf3ffecf5fbeaf7f0f9edf1f2b0fdf1f3">[email&#160;protected]</a></div></div></div>
       <div class="ci"><div class="ci-ico">&#128188;</div><div><div class="ci-lbl">Upwork</div><div class="ci-val">Top Rated &middot; Top 10%</div></div></div>
       <div class="ci"><div class="ci-ico">&#128205;</div><div><div class="ci-lbl">Availability</div><div class="ci-val">Open globally for new engagements</div></div></div>
       <div class="fitbox"><div style="font-size:.56rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)">Good fit for</div><ul class="fitl"><li>Companies between $500K&ndash;$50M revenue</li><li>Founders building toward first or next raise</li><li>Teams without a senior marketing leader</li><li>Products nearing launch with no GTM plan</li><li>Brands with budget but no strategy</li></ul></div>
@@ -855,7 +862,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
       <div>
         <button class="btn bt" type="submit" id="f_btn">Send Message &rarr;</button>
         <div id="fok" style="display:none;color:var(--teal);font-size:.82rem;margin-top:6px">&#10003; Message sent! We'll be in touch within 24 hours.</div>
-        <div id="ferr" style="display:none;color:var(--ora);font-size:.78rem;margin-top:6px">Something went wrong. Please email us directly at hello@madmarketingsol.com</div>
+        <div id="ferr" style="display:none;color:var(--ora);font-size:.78rem;margin-top:6px">Something went wrong. Please email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bdd5d8d1d1d2fdd0dcd9d0dccfd6d8c9d4d3daced2d193ded2d0">[email&#160;protected]</a></div>
       </div>
     </form>
   </div>
@@ -865,7 +872,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   </footer>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* EmailJS init — uses the free public service */
 (function(){
@@ -1137,27 +1144,4 @@ function submitF(e){
       company:    company  || 'Not provided',
       service:    service  || 'Not specified',
       message:    message,
-      botcheck:   ''
-    })
-  })
-  .then(r => r.json())
-  .then(res => {
-    if(res.success){
-      btn.style.display = 'none';
-      ok.style.display  = 'block';
-      document.getElementById('contactForm').reset();
-    } else {
-      throw new Error(res.message || 'Submit failed');
-    }
-  })
-  .catch(() => {
-    btn.textContent = 'Send Message →'; btn.disabled = false;
-    err.style.display = 'block';
-  });
-}
-
-/* INIT */
-go('home');
-</script>
-</body>
-</html>
+    
