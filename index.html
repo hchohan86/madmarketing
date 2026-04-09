@@ -26,13 +26,13 @@ img{max-width:100%;height:auto}
 
 /* ━━━ NAV ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:400;height:130px;
+  position:fixed;top:0;left:0;right:0;z-index:400;height:72px;
   padding:0 48px;display:flex;align-items:center;justify-content:space-between;
   transition:background .5s,backdrop-filter .5s,box-shadow .5s;
 }
 nav.stuck{background:rgba(6,4,16,.93);backdrop-filter:blur(22px);box-shadow:0 1px 0 rgba(55,188,188,.14)}
-.nav-logo{display:flex;align-items:center;cursor:pointer;height:120px}
-.nav-logo img{height:114px;width:auto;filter:drop-shadow(0 0 18px rgba(55,188,188,.5))}
+.nav-logo{display:flex;align-items:center;cursor:pointer}
+.nav-logo img{height:168px;width:auto;filter:drop-shadow(0 0 18px rgba(55,188,188,.5))}
 .nlinks{display:flex;gap:2.4rem;list-style:none}
 .nlinks a{font-size:.66rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;position:relative;padding-bottom:3px;transition:color .2s}
 .nlinks a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transition:transform .28s;transform-origin:left}
@@ -394,22 +394,20 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   .fg3{grid-template-columns:1fr 1fr}
   .nlinks{display:none}
   .sc-full,.bc-feat{grid-column:span 1}
-  nav{padding:0 16px;height:100px}
-  .nav-logo{height:88px}
-  .nav-logo img{height:84px}
+  nav{padding:0 16px;height:72px}
+  .nav-logo img{height:148px}
   .hero,.s-stmt,.s-stats,.s-svc,.s-proc,.s-about,.s-cta,.s-proof,.s-qual,.s-work,.s-ind,.ph,.spg,.cg,.bg2,.ag,.cl,.ctab,.tl{padding-left:24px;padding-right:24px}
   .spg,.cg,.bg2,.ag{padding-left:24px;padding-right:24px}
 }
-@media(max-width:640px){
+@media(max-width:768px){
   .stats-grid,.spg,.cg,.bg2,.fg3{grid-template-columns:1fr}
-  .cg{gap:14px}
+  .cg{gap:14px;padding:0 16px 60px}
   .cc-feat{grid-template-columns:1fr;gap:20px}
   .bc-feat{grid-column:span 1;grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .hero-h{font-size:clamp(2.75rem,10vw,5.5rem)}
-  nav{height:90px;padding:0 16px}
-  .nav-logo{height:78px}
-  .nav-logo img{height:74px}
+  nav{height:72px;padding:0 16px}
+  .nav-logo img{height:134px}
 }
 </style>
 </head>
@@ -834,7 +832,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   <div class="cl">
     <div class="rv">
       <div class="ci"><div class="ci-ico">&#127760;</div><div><div class="ci-lbl">Website</div><div class="ci-val">madmarketingsol.com</div></div></div>
-      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val">hello@madmarketingsol.com</div></div></div>
+      <div class="ci"><div class="ci-ico">&#9993;</div><div><div class="ci-lbl">Email</div><div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b9d1dcd5d5d6f9d4d8ddd4d8cbd2dccdd0d7decad6d597dad6d4">[email&#160;protected]</a></div></div></div>
       <div class="ci"><div class="ci-ico">&#128188;</div><div><div class="ci-lbl">Upwork</div><div class="ci-val">Top Rated &middot; Top 10%</div></div></div>
       <div class="ci"><div class="ci-ico">&#128205;</div><div><div class="ci-lbl">Availability</div><div class="ci-val">Open globally for new engagements</div></div></div>
       <div class="fitbox"><div style="font-size:.56rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)">Good fit for</div><ul class="fitl"><li>Companies between $500K&ndash;$50M revenue</li><li>Founders building toward first or next raise</li><li>Teams without a senior marketing leader</li><li>Products nearing launch with no GTM plan</li><li>Brands with budget but no strategy</li></ul></div>
@@ -862,7 +860,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
       <div>
         <button class="btn bt" type="submit" id="f_btn">Send Message &rarr;</button>
         <div id="fok" style="display:none;color:var(--teal);font-size:.82rem;margin-top:6px">&#10003; Message sent! We'll be in touch within 24 hours.</div>
-        <div id="ferr" style="display:none;color:var(--ora);font-size:.78rem;margin-top:6px">Something went wrong. Please email us directly at hello@madmarketingsol.com</div>
+        <div id="ferr" style="display:none;color:var(--ora);font-size:.78rem;margin-top:6px">Something went wrong. Please email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ef878a838380af828e8b828e9d848a9b8681889c8083c18c8082">[email&#160;protected]</a></div>
       </div>
     </form>
   </div>
@@ -872,7 +870,7 @@ footer{background:#040210;border-top:1px solid rgba(255,255,255,.06);padding:68p
   </footer>
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* EmailJS init — uses the free public service */
 (function(){
   try{emailjs.init({publicKey:'YOUR_EMAILJS_PUBLIC_KEY'})}catch(e){}
@@ -1149,21 +1147,4 @@ function submitF(e){
   .then(r => r.json())
   .then(res => {
     if(res.success){
-      btn.style.display = 'none';
-      ok.style.display  = 'block';
-      document.getElementById('contactForm').reset();
-    } else {
-      throw new Error(res.message || 'Submit failed');
-    }
-  })
-  .catch(() => {
-    btn.textContent = 'Send Message →'; btn.disabled = false;
-    err.style.display = 'block';
-  });
-}
-
-/* INIT */
-go('home');
-</script>
-</body>
-</html>
+      btn
